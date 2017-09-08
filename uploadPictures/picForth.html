@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>上传图片的尺寸</title>
+	</head>
+	<body>
+		<input type="file" name="face" id="face" value="" />
+		<script type="text/javascript">
+			var fileSize = Math.floor((this.files[0].size)/1024);//单位为kb
+		</script>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>点击图片出发隐藏的file</title>
+		<style type="text/css">
+			.imgBox{
+				width: 500px;
+				height: 300px;
+				margin: 0 auto;
+			}
+			.imgBox img{
+				width: 100%;
+				height: 100%;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="imgBox">
+			<img src="clover.jpg" id="img"/>
+			<input type="file" name="file" id="file" value="" style="display: none;"/>
+		</div>
+		
+		<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript">
+			function getObjectUrl(file){
+				var url=null;
+				if (window.createObjectURL!=undefined) {// basic
+					url=window.createObjectURL(file)
+				}else if(window.URL!=undefined){ // mozilla(firefox)
+					url=window.URL.createObjectURL(file)
+				}else if(window.webkitURL!=undefined){// webkit or chrome
+					url=window.webkitURL.createObjectURL(file)
+				}
+				return url;
+			}
+			$('#img').click(function(){
+				$('#file').click();
+				$('#file').on('change',function(){
+					var url=getObjectUrl(this.files[0]);
+					if (url) {
+						$('#img').attr('src',url);
+					}
+					
+				})
+			})
+		</script>
+	</body>
+</html>

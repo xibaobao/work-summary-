@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图片上传（formdata对象）</title>
+	</head>
+	<body>
+		<form action="" method="post" enctype="multipart/form-data" id="form">
+			<input type="file" name="face" id="face" value="" />
+			<input type="button" name="button" id="button" value="" />
+		</form>
+		<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript">
+			var formdata=new FormData($('#form')[0]);
+			/*var formdata=new FormData();
+			formdata.append('face',$('#file')[0].files);*/
+			$('#button').click(function(){				
+				$.ajax({
+					type:"POST",
+					url:"",
+					data: formData,  
+					async: false,  
+					cache: false,  
+					contentType: false,  
+					processData: false,  
+					success:function(returndata){
+						alert(returndata);  
+					},
+					error:function(returndata){
+						alert(returndata);  
+					}
+				});
+			})
+		</script>
+	</body>
+</html>
