@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>倒计时</title>
+		<style type="text/css">
+			.time{
+				width: 500px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				background: pink;
+				color: #fff;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="time"></div>
+		<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript">
+			var intDiff = parseInt(100000);//倒计时总秒数量
+			function timer(intDiff){
+				if (intDiff>0) {
+					window.setInterval(function(){
+						var day=0;
+						var hour=0;
+						var minute=0;
+						var sencond=0;
+						day=Math.floor(intDiff/(60*60*24));
+						hour=Math.floor(intDiff/(60*60))-(day*24);
+						minute=Math.floor(intDiff/60)-(day*24*60)-(hour*60);
+						sencond=Math.floor(intDiff)-(day*24*60*60)-(hour*60*60)-(minute*60);
+						if (day<=9) {
+							day="0"+day;
+						}
+						if (hour<=9) {
+							hour="0"+hour;
+						}
+						if (minute<=9) {
+							minute="0"+minute;
+						}
+						if (sencond<=9) {
+							sencond="0"+sencond;
+						}
+						$('.time').html('倒计时：'+day+'天'+hour+'时'+minute+'分'+sencond+'秒')
+						intDiff--;
+					},1000);
+					
+					
+				}
+			}
+			$(function(){
+				timer(intDiff);
+			})
+		</script>
+	</body>
+</html>
