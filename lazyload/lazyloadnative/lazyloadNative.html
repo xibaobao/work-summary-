@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>多张图片的延迟加载（原生）</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				font-family: "微软雅黑";
+			}
+			.newList{
+				list-style: none;
+				padding: 15px;
+				width: 500px;
+			}
+			.newList li{
+				width: 500px;
+				height: 300px;
+				border-bottom: 1px dashed #ccc;
+				position: relative;
+				padding: 10px 0;
+			}
+			.newList li img{
+				width: 100%;
+				height: 100%;
+			}
+			.newList li h2{
+				position: absolute;
+				left: 0;
+				top: 20px;
+				width: 500px;
+				height: 100px;
+				font-size: 14px;
+			}
+			.newList li p{
+				position: absolute;
+				left: 0;
+				top: 280px;
+				width: 500px;
+				height: 20px;
+				font-size: 14px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="newList">
+			<li>
+				<div><img src="" xibao="clover.jpg"/></div>
+				<div>
+					<h2>三叶草的花语,一片叶子代表祈求,一片叶子代表希望，一片叶子代表爱情，最后的一片叶子，代表着幸福。</h2>
+					<p>只要你能找到四叶三叶草，你就会找到幸福。</p>
+				</div>
+			</li>
+			<li>
+				<div><img src="" xibao="clover.jpg"/></div>
+				<div>
+					<h2>三叶草的花语,一片叶子代表祈求,一片叶子代表希望，一片叶子代表爱情，最后的一片叶子，代表着幸福。</h2>
+					<p>只要你能找到四叶三叶草，你就会找到幸福。</p>
+				</div>
+			</li>
+			<li>
+				<div><img src="" xibao="clover.jpg"/></div>
+				<div>
+					<h2>三叶草的花语,一片叶子代表祈求,一片叶子代表希望，一片叶子代表爱情，最后的一片叶子，代表着幸福。</h2>
+					<p>只要你能找到四叶三叶草，你就会找到幸福。</p>
+				</div>
+			</li>
+			<li>
+				<div><img src="" xibao="clover.jpg"/></div>
+				<div>
+					<h2>三叶草的花语,一片叶子代表祈求,一片叶子代表希望，一片叶子代表爱情，最后的一片叶子，代表着幸福。</h2>
+					<p>只要你能找到四叶三叶草，你就会找到幸福。</p>
+				</div>
+			</li>
+			<li>
+				<div><img src="" xibao="clover.jpg"/></div>
+				<div>
+					<h2>三叶草的花语,一片叶子代表祈求,一片叶子代表希望，一片叶子代表爱情，最后的一片叶子，代表着幸福。</h2>
+					<p>只要你能找到四叶三叶草，你就会找到幸福。</p>
+				</div>
+			</li>
+			<li>
+				<div><img src="" xibao="clover.jpg"/></div>
+				<div>
+					<h2>三叶草的花语,一片叶子代表祈求,一片叶子代表希望，一片叶子代表爱情，最后的一片叶子，代表着幸福。</h2>
+					<p>只要你能找到四叶三叶草，你就会找到幸福。</p>
+				</div>
+			</li>
+			<li>
+				<div><img src="" xibao="clover.jpg"/></div>
+				<div>
+					<h2>三叶草的花语,一片叶子代表祈求,一片叶子代表希望，一片叶子代表爱情，最后的一片叶子，代表着幸福。</h2>
+					<p>只要你能找到四叶三叶草，你就会找到幸福。</p>
+				</div>
+			</li>
+			<li>
+				<div><img src="" xibao="clover.jpg"/></div>
+				<div>
+					<h2>三叶草的花语,一片叶子代表祈求,一片叶子代表希望，一片叶子代表爱情，最后的一片叶子，代表着幸福。</h2>
+					<p>只要你能找到四叶三叶草，你就会找到幸福。</p>
+				</div>
+			</li>
+			<li>
+				<div><img src="" xibao="clover.jpg"/></div>
+				<div>
+					<h2>三叶草的花语,一片叶子代表祈求,一片叶子代表希望，一片叶子代表爱情，最后的一片叶子，代表着幸福。</h2>
+					<p>只要你能找到四叶三叶草，你就会找到幸福。</p>
+				</div>
+			</li>
+			<li>
+				<div><img src="" xibao="clover.jpg"/></div>
+				<div>
+					<h2>三叶草的花语,一片叶子代表祈求,一片叶子代表希望，一片叶子代表爱情，最后的一片叶子，代表着幸福。</h2>
+					<p>只要你能找到四叶三叶草，你就会找到幸福。</p>
+				</div>
+			</li>
+			
+			<li>
+				<div><img src="" xibao="clover.jpg"/></div>
+				<div>
+					<h2>三叶草的花语,一片叶子代表祈求,一片叶子代表希望，一片叶子代表爱情，最后的一片叶子，代表着幸福。</h2>
+					<p>只要你能找到四叶三叶草，你就会找到幸福。</p>
+				</div>
+			</li>
+			<li>
+				<div><img src="" xibao="clover.jpg"/></div>
+				<div>
+					<h2>三叶草的花语,一片叶子代表祈求,一片叶子代表希望，一片叶子代表爱情，最后的一片叶子，代表着幸福。</h2>
+					<p>只要你能找到四叶三叶草，你就会找到幸福。</p>
+				</div>
+			</li>
+			<li>
+				<div><img src="" xibao="clover.jpg"/></div>
+				<div>
+					<h2>三叶草的花语,一片叶子代表祈求,一片叶子代表希望，一片叶子代表爱情，最后的一片叶子，代表着幸福。</h2>
+					<p>只要你能找到四叶三叶草，你就会找到幸福。</p>
+				</div>
+			</li>
+		</ul>
+		<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+		<script src="utils.js"></script>
+		<script type="text/javascript">
+			var ul=document.querySelector('.newList');
+			var imgs=ul.getElementsByTagName('img');
+			//图片的延迟加载
+			function allImgsDelayLoad(){
+				for (var i=0;i<imgs.length;i++) {
+					var curImg=imgs[i];
+					if (curImg.isLoad) {
+						continue;
+					}
+					var a=utils.win('clientHeight')+utils.win('acrollTop');
+					var b=curImg.parentNode.offsetHeight+utils.offset(curImg.parentNode).top;
+					if (a>b) {
+						singleImg(curImg);
+						fadeIn(curImg);
+					}
+					
+				}
+			}
+			//淡入效果
+			function fadeIn(img){
+				img.timer=window.setInterval(function(){
+					var opcity=utils.getCss(img,'opacity');
+					if (opacity>=1) {
+						window.clearInterval(img.timer);
+						return;
+					}
+					opcity+=0.01;
+					img.Style.opacity=opcity;
+				},20);
+			}
+			//单张图片的延迟加载
+			function singleImg(){
+				var tempImg=document.createElement('img');
+				tempImg.src=img.getAttribute('xibao');
+				tempImg.onload=function(){
+					img.src=this.src;
+				}
+				img.isLoad=true;
+			}
+			allImgsDelayLoad();
+			window.onscroll=allImgsDelayLoad();
+		</script>
+	</body>
+</html>
