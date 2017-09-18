@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>上传图片的图片尺寸(宽高)</title>
+	</head>
+
+	<body>
+	
+		<form action="" method="post">
+			<input type="file" name="img_upload" id="img_upload" onchange="imgUpload();" />     
+		</form>
+
+		<script type="text/javascript">
+			function imgUpload() {                     
+				var file = document.getElementById('img_upload');                    
+				createReader(file.files[0], function(w, h) {
+					alert(w + ' ' + h)
+				});           
+			}           
+			createReader = function(file, whenReady) {                     
+				var reader = new FileReader;                    
+				reader.onload = function(evt) {                                
+					var image = new Image();                                               
+					image.onload = function() {                                          
+						var width = this.width;                                          
+						var height = this.height;                                           
+						if(whenReady) whenReady(width, height);                               
+					};                               
+					image.src = evt.target.result;                     
+				};                    
+				reader.readAsDataURL(file);            
+			}
+		</script>
+
+	</body>
+
+</html>
